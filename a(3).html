@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Promise</h1>
+    <p id="i1"></p>
+    <p id="i2"></p>
+
+    <script>
+        let ob = new Promise(function (Resolve, Reject) { //Producing Code
+            var x = 20;
+            if (x == 0) {
+                Resolve("OK"); //Successful
+            }
+            else { //Unsuccessful
+                Reject("Error")
+            }
+        });
+
+        ob.then (
+            function(value) { //If successful
+                f1(4, 2);
+            },
+
+            function(error) { //If unsuccessful
+                f1(error);
+            }
+        )
+
+        async function f1(m, n){ //Consuming Code
+            let ans = await m + n;
+            document.write(ans);
+        }
+    </script>
+</body>
+
+</html>
